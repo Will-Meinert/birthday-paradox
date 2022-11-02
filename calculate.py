@@ -30,12 +30,12 @@ with open('values.json', 'r') as f:
 while 1: 
 	#TODO: make this more efficient
 	#choose random values to compare 
-	a = random_float(10, 15)
-	b = random_float(8, 12)
-	c = random_float(20, 25)
-	d = random_float(7, 15)
-	e = np.random.randint(80, 96)
-	f = random_float(0, 1)
+	a = random_float(11, 14)
+	b = random_float(9, 11)
+	c = random_float(19, 24)
+	d = random_float(6, 10)
+	e = random_float(80, 96)
+	f = 0.44
 	data2 = [arctan(i, a, b, c, d, e, f) for i in range(0, 100)]
 	# find error between data points
 	error = 0
@@ -46,7 +46,7 @@ while 1:
 		best_error = error
 
 		if best_error < best_json_error:
-			print('new (json) best error: ' + str(error) + ' with a = ' + str(values['a']) + ', b = ' + str(values['b']) + ', c = ' + str(values['c']) + ', d = ' + str(values['d']) + ', e = ' + str(values['e']) + ', f = ' + str(values['f']))
+			print('new (json) best error: ' + str(error) + ' with a = ' + str(a) + ', b = ' + str(b) + ', c = ' + str(c) + ', d = ' + str(d) + ', e = ' + str(e) + ', f = ' + str(f))
 
 			# read json file values and update with new values
 			with open('values.json', 'r') as val:
