@@ -1,7 +1,6 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
+import json
 
 def birthday_paradox(n):
 	probability = 1
@@ -11,13 +10,16 @@ def birthday_paradox(n):
 
 
 # arctan values
-# error = 1.5972928762910859
-a = 12.977
-b = 10.285
-c = 21.295
-d = 9.33
-e = 95
-f = 0.447
+# read arctan values from json file
+with open('values.json', 'r') as val:
+	values = json.load(val)
+	a = values['a']
+	b = values['b']
+	c = values['c']
+	d = values['d']
+	e = values['e']
+	f = values['f']
+
 def arctan(x, original: bool = False):
 	if original:
 		return (13/(10*np.pi))*np.arctan((x-23)*9/100) + 0.5
