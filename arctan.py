@@ -10,7 +10,7 @@ def birthday_paradox(n):
 	return 1 - probability
 
 
-# arctan
+# arctan values
 # error = 1.5972928762910859
 a = 12.977
 b = 10.285
@@ -24,7 +24,7 @@ def arctan(x, original: bool = False):
 	else:
 		return (a/(b*np.pi))*np.arctan((x-c)*d/e) + f
 
-
+#calculate data
 data1 = [birthday_paradox(i) for i in range(0, 100)]
 data2 = [arctan(i) for i in range(0, 100)]
 data3 = [arctan(i, True) for i in range(0, 100)]
@@ -40,12 +40,11 @@ for i in range(0, 100):
 print('dataset 3 error: ' + str(error))
 
 
-
+#show data
 plt.plot(data1)
 plt.plot(data2)
 plt.plot(data3)
 plt.legend(['Birthday Paradox', 'Arctan', 'Original Arctan'])
 plt.show()
 
-#show both data sets on the same plot with different lines
 

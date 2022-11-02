@@ -17,7 +17,7 @@ def arctan(x, a, b, c, d, e, f):
 		return 0
 
 
-#generate random flot in range with 2 decimals of precision
+#generate random float in range with 3 decimals of precision
 
 def random_float(start, end):
 	return round(np.random.uniform(start, end), 3)
@@ -26,6 +26,8 @@ def random_float(start, end):
 data1 = [birthday_paradox(i) for i in range(0, 100)]
 best_error = 0
 while 1: 
+	#TODO: make this more efficient
+	#choose random values to compare 
 	a = random_float(10, 15)
 	b = random_float(8, 12)
 	c = random_float(20, 25)
@@ -38,7 +40,7 @@ while 1:
 	for i in range(0, 100):
 		error += abs(data1[i] - data2[i])
 	if error < best_error or best_error == 0:
-	#if error is less than last error, save the values
+	#if error is less than last error, print the values
 		best_error = error
 		print('new best error: ' + str(best_error) + ' with a = ' + str(a) + ', b = ' + str(b) + ', c = ' + str(c) + ', d = ' + str(d) + ', e = ' + str(e) + ', f = ' + str(f))
 
