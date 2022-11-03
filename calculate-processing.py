@@ -40,7 +40,7 @@ def main():
 		c = random_float(19, 24)
 		d = random_float(6, 10)
 		e = random_float(80, 96)
-		f = random_float(0.4, 0.5)
+		f = 0.44
 		data2 = [arctan(i, a, b, c, d, e, f) for i in range(0, 100)]
 		# find error between data points
 		error = 0
